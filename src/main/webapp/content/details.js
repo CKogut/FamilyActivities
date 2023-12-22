@@ -64,7 +64,12 @@ function showActivityDetail(activity) {
   let body = document.createElement('p');
   let by = document.createElement('p');
   title.innerHTML = `${activity.description}`;
-  body.innerHTML = `${safetext(activity.cost)}`;
+  body.innerHTML = `Approximate cost: ${safetext(activity.cost)}<br>
+                    Location: ${safetext(activity.location)}<br>
+                    Minimum amount of participants: ${safetext(activity.minParticipants)}<br>
+                    Maximum amount of participants: ${safetext(activity.maxParticipants)}<br>
+                    Approximate time: ${safetext(activity.time)}<br>
+                    Location(s): ${safetext(activity.location)}`;
 
   li.appendChild(title);
   li.appendChild(body);
