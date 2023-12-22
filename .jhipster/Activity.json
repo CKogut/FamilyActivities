@@ -1,0 +1,36 @@
+{
+  "annotations": {
+    "changelogDate": "20231222155034"
+  },
+  "applications": "*",
+  "entityTableName": "activity",
+  "fields": [
+    {
+      "fieldName": "description",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "cost",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "minParticipants",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "maxParticipants",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "time",
+      "fieldType": "Duration"
+    },
+    {
+      "fieldName": "location",
+      "fieldType": "String"
+    }
+  ],
+  "name": "Activity",
+  "relationships": [],
+  "searchEngine": "no"
+}

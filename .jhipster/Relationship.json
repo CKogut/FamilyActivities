@@ -1,0 +1,35 @@
+{
+  "annotations": {
+    "changelogDate": "20231222154934"
+  },
+  "applications": "*",
+  "entityTableName": "relationship",
+  "fields": [
+    {
+      "fieldName": "liked",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "shared",
+      "fieldType": "Boolean"
+    }
+  ],
+  "name": "Relationship",
+  "relationships": [
+    {
+      "otherEntityField": "login",
+      "otherEntityName": "user",
+      "relationshipName": "user",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one",
+      "relationshipWithBuiltInEntity": true
+    },
+    {
+      "otherEntityName": "activity",
+      "relationshipName": "description",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no"
+}
