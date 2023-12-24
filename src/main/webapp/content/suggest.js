@@ -47,7 +47,7 @@ function showActivityList(data) {
   var randomObject = getRandomObject(data);
   console.log(randomObject);
 
-  title.innerHTML = `<a href="details.html?activityid=${activity.id}">${activity.description}</a>`;
+  title.innerHTML = `<a href="details.html?activityid=${randomObject.id}">${randomObject.description}</a>`;
 
   div.appendChild(title);
   list.appendChild(div);
