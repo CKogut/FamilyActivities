@@ -27,6 +27,12 @@ function dateOf(date) {
   return humanDateFormat;
 }
 
+// Function to pick a random object from the JSON data
+function getRandomObject(data) {
+  var randomIndex = Math.floor(Math.random() * data.length);
+  return data[randomIndex];
+}
+
 function showActivityList(data) {
   // the data parameter will be a JS array of JS objects
   // this uses a combination of "HTML building" DOM methods (the document createElements) and
@@ -35,15 +41,16 @@ function showActivityList(data) {
   const activities = document.getElementById('activities');
   const list = document.createDocumentFragment();
 
-  data.map(function (activity) {
-    let div = document.createElement('div');
-    let title = document.createElement('h3');
+  let div = document.createElement('div');
+  let title = document.createElement('h3');
 
-    title.innerHTML = `<a href="details.html?activityid=${activity.id}">${activity.description}</a>`;
+  var randomObject = getRandomObject(data);
+  console.log(randomObject);
 
-    div.appendChild(title);
-    list.appendChild(div);
-  });
+  title.innerHTML = `<a href="details.html?activityid=${activity.id}">${activity.description}</a>`;
+
+  div.appendChild(title);
+  list.appendChild(div);
 
   activities.appendChild(list);
 }
