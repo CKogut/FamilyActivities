@@ -17,31 +17,35 @@
     <section id="section">
       <div id="post"></div>
       <form id="addactivityform">
-        <label for="description">Description:</label><br />
+        <label for="description">Description of activity:</label><br />
         <input type="text" id="description" name="description" size="50" /><br />
 
-        <label for="cost">Cost:</label><br />
-        <input type="text" id="cost" name="cost" size="50" /><br />
+        <label for="cost">Approximate cost per person:</label><br />
+        <select name="cost" id="cost">
+          <option value="Free">Free</option>
+          <option value="Free to $10 per person">Free to $10</option>
+          <option value="$10 to $25 per person">$10 to $25</option>
+          <option value="$25 to $50 per person">$25 to $50</option>
+          <option value="$50 to $100 per person">$50 to $100</option>
+          <option value="$100 or more per person">$100 or more</option></select
+        ><br />
 
         <label for="minParticipants">Minimum number of participants:</label><br />
-        <input type="number" step="1" min="1" max="100" id="minParticipants" name="minParticipants" size="3" /><br />
+        <input type="number" step="1" min="1" max="100" id="minParticipants" name="minParticipants" size="5" /><br />
 
         <label for="maxParticipants">Maximum number of participants:</label><br />
-        <input
-          type="number"
-          step="1"
-          min="1"
-          max="100"
-          onchange="this.value = parseInt(this.value);"
-          id="maxParticipants"
-          name="maxParticipants"
-          size="3"
-        /><br />
+        <input type="number" step="1" min="1" max="100" id="maxParticipants" name="maxParticipants" size="5" /><br />
 
-        <label for="location">Location:</label><br />
-        <input type="text" id="location" name="location" size="50" /><br />
-
+        <label for="location">Location, can choose multiple options:</label><br />
+        <!--  <input type="text" id="location" name="location" size="50" /><br /> -->
+        <select name="location" id="location" multiple>
+          <option value="Home">Home</option>
+          <option value="Away">Away</option>
+          <option value="Inside">Inside</option>
+          <option value="Outside">Outside</option>
+        </select>
         <br />
+
         <input type="submit" value="Save" />
       </form>
     </section>
