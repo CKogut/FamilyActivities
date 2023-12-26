@@ -8,18 +8,15 @@ function doPostOfForm(event) {
   formData.forEach(function (value, key) {
     object[key] = value;
   });
-  // have to insert date as it is "required" in data model
-  object['date'] = new Date().toJSON();
-  // besides, it's good to record the date the post was created
   postJSON(object);
 
-  document.getElementById('addpostform').reset();
+  document.getElementById('addactivityform').reset();
 }
 
 async function postJSON(data) {
   // data here is a JS Object (keys/values) "JSON"
   try {
-    const response = await fetch(`${API_URL}/api/posts/`, {
+    const response = await fetch(`${API_URL}/api/activities`, {
       method: 'POST', // or 'PUT'
       headers: {
         'Content-Type': 'application/json',
@@ -34,5 +31,5 @@ async function postJSON(data) {
   }
 }
 
-const form = document.getElementById('addpostform');
+const form = document.getElementById('addactivityform');
 form.addEventListener('submit', doPostOfForm);

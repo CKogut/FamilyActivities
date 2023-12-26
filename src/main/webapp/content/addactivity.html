@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Family Activities</title>
+    <link rel="stylesheet" href="sstyles.css" />
+
+    <script src="addactivity.js" async defer></script>
+  </head>
+
+  <body>
+    <h1>Family Activities</h1>
+    <p><a href="suggest.html">Back</a></p>
+    <h3>Add New Activity</h3>
+    <section id="section">
+      <div id="post"></div>
+      <form id="addactivityform">
+        <label for="description">Description:</label><br />
+        <input type="text" id="description" name="description" size="50" /><br />
+
+        <label for="cost">Cost:</label><br />
+        <input type="text" id="cost" name="cost" size="50" /><br />
+
+        <label for="minParticipants">Minimum number of participants:</label><br />
+        <input type="number" step="1" min="1" max="100" id="minParticipants" name="minParticipants" size="3" /><br />
+
+        <label for="maxParticipants">Maximum number of participants:</label><br />
+        <input
+          type="number"
+          step="1"
+          min="1"
+          max="100"
+          onchange="this.value = parseInt(this.value);"
+          id="maxParticipants"
+          name="maxParticipants"
+          size="3"
+        /><br />
+
+        <label for="location">Location:</label><br />
+        <input type="text" id="location" name="location" size="50" /><br />
+
+        <br />
+        <input type="submit" value="Save" />
+      </form>
+    </section>
+  </body>
+</html>

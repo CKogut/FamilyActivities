@@ -1,7 +1,7 @@
 const API_URL = `http://localhost:8080`;
 
 function fetchActivity(activityid) {
-  fetch(`${API_URL}/api/posts/${activityid}`)
+  fetch(`${API_URL}/api/activities/${activityid}`)
     .then(res => {
       //console.log("res is ", Object.prototype.toString.call(res));
       return res.json();
@@ -11,11 +11,11 @@ function fetchActivity(activityid) {
     })
     .catch(error => {
       console.log(`Error Fetching data : ${error}`);
-      document.getElementById('activity').innerHTML = 'Error Loading Single Post Data';
+      document.getElementById('activity').innerHTML = 'Error Loading Single Activity Data';
     });
 }
 
-function parsePostId() {
+function parseActivityId() {
   try {
     var url_string = window.location.href.toLowerCase();
     var url = new URL(url_string);
@@ -50,27 +50,26 @@ var safetext = function (text) {
   });
 };
 
-function showActivityDetail(post) {
+function showActivityDetail(activity) {
   // the data parameter will be a JS array of JS objects
   // this uses a combination of "HTML building" DOM methods (the document createElements) and
   // simple string interpolation (see the 'a' tag on title)
   // both are valid ways of building the html.
-  const ul = document.getElementById('post');
+  const ul = document.getElementById('activity');
   const detail = document.createDocumentFragment();
 
-  console.log('Note:', post);
+  console.log('Activity:', activity);
   let li = document.createElement('div');
   let title = document.createElement('h2');
   let body = document.createElement('p');
   let by = document.createElement('p');
-  title.innerHTML = `${post.title}`;
-  body.innerHTML = `${safetext(post.content)}`;
-  //let postedTime = dateOf(post.time)
-  if (post.blog != null) {
-    by.innerHTML = `<em>posted ${post.date} in ${post.blog.name}</em>`;
-  } else {
-    by.innerHTML = `<em>posted ${post.date}</em>`;
-  }
+  title.innerHTML = `${activity.description}`;
+  body.innerHTML = `Approximate cost: ${safetext(activity.cost)}<br>
+                    Location: ${safetext(activity.location)}<br>
+                    Minimum amount of participants: ${safetext(activity.minParticipants)}<br>
+                    Maximum amount of participants: ${safetext(activity.maxParticipants)}<br>
+                    Approximate time: ${safetext(activity.time)}<br>
+                    Location(s): ${safetext(activity.location)}`;
 
   li.appendChild(title);
   li.appendChild(body);
@@ -81,12 +80,12 @@ function showActivityDetail(post) {
 }
 
 function handlePage() {
-  let activityid = parsePostId();
+  let activityid = parseActivityId();
   console.log('activityid: ', activityid);
 
   if (activityid != null) {
     console.log('found a activityid');
-    FetchActivity(activityid);
+    fetchActivity(activityid);
   }
 }
 

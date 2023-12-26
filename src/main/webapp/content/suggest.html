@@ -6,15 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Family Activities</title>
     <link rel="stylesheet" href="sstyles.css" />
-
-    <script src="details.js" async defer></script>
+    <script src="suggest.js" async defer></script>
   </head>
-
   <body>
     <h1>Family Activities</h1>
-    <p><a href="suggest.html">&lt; Back</a></p>
+    <a href="addactivity.html" style="float: right">Add an activity</a>
     <section id="section">
-      <div id="activity"></div>
+      <div id="suggest"></div>
+      <button onClick="window.location.reload();">Random Suggestion!</button>
+      <div id="activities"></div>
     </section>
   </body>
 </html>
