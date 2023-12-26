@@ -12,7 +12,7 @@
 
   <body>
     <h1>Family Activities</h1>
-    <p><a href="activities.html">&lt; Back</a></p>
+    <p><a href="suggest.html">Back</a></p>
     <h3>Add New Activity</h3>
     <section id="section">
       <div id="post"></div>
@@ -23,11 +23,20 @@
         <label for="cost">Cost:</label><br />
         <input type="text" id="cost" name="cost" size="50" /><br />
 
-        <label for="minparticipants">Minimum number of participants:</label><br />
-        <input type="text" id="minparticipants" name="minparticipants" size="50" /><br />
+        <label for="minParticipants">Minimum number of participants:</label><br />
+        <input type="number" step="1" min="1" max="100" id="minParticipants" name="minParticipants" size="3" /><br />
 
-        <label for="maxparticipants">Maximum number of participants:</label><br />
-        <input type="text" id="maxparticipants" name="maxparticipants" size="50" /><br />
+        <label for="maxParticipants">Maximum number of participants:</label><br />
+        <input
+          type="number"
+          step="1"
+          min="1"
+          max="100"
+          onchange="this.value = parseInt(this.value);"
+          id="maxParticipants"
+          name="maxParticipants"
+          size="3"
+        /><br />
 
         <label for="location">Location:</label><br />
         <input type="text" id="location" name="location" size="50" /><br />
